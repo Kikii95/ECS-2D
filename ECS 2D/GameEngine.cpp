@@ -13,6 +13,10 @@ SystemManager& GameEngine::GetSystemManager() {
     return systemManager;
 }
 
+sf::RenderWindow& GameEngine::GetWindow() {
+    return window;
+}
+
 GameTimer& GameEngine::GetTimer() {
     return gameTimer;
 }

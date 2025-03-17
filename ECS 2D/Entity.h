@@ -1,8 +1,12 @@
 #pragma once
+
+#include <SFML/Graphics.hpp>
+#include "Logs.h"
 #include <vector>
 #include <list>
 #include <unordered_map>
 #include <typeindex>
+#include <memory>
 
 class Component;
 class System;

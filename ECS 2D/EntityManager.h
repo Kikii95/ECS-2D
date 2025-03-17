@@ -1,8 +1,7 @@
 #pragma once
-#include <map>
-#include <vector>
+
 #include "Entity.h"
-#include <memory>
+
 
 class EntityManager {
 private:
@@ -10,14 +9,15 @@ private:
     int nextEntityID = 0;  
 
 public:
-    ~EntityManager() = default; // Plus besoin d’un destructeur manuel
+    ~EntityManager() = default; 
 
     Entity* CreateEntity();
 
     Entity* GetEntity(int id);
 
     std::vector<Entity*> GetAllEntities();
-
+    std::vector<Entity*> GetEntitiesByTag(const std::string& tag);
+    
     void DestroyEntity(int id);
 
     void Clear();

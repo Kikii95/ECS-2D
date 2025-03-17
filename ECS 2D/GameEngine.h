@@ -7,9 +7,10 @@
 
 class GameEngine {
 public:
-    static GameEngine& GetInstance();  // Singleton
+    static GameEngine& GetInstance();
     EntityManager& GetEntityManager();
     SystemManager& GetSystemManager();
+    sf::RenderWindow& GetWindow();
     GameTimer& GetTimer();
 
     void Init();
@@ -17,10 +18,10 @@ public:
     void CleanUp();
 
 private:
-    GameEngine() = default;  // Singleton
+    GameEngine() = default; 
     ~GameEngine() = default;
 
-    sf::RenderWindow window;  // Fenêtre SFML
+    sf::RenderWindow window; 
     SystemManager systemManager;
     EntityManager entityManager;
     GameTimer gameTimer;

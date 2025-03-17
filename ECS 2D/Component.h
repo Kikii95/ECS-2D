@@ -1,6 +1,7 @@
 #pragma once
 #include <typeindex>
 #include "Entity.h"
+#include "GameEngine.h"
 
 class Entity;
 
@@ -17,5 +18,6 @@ public:
 
     Entity* GetEntity();
 
-    virtual std::type_index GetType() const = 0;
+    virtual std::type_index GetType() const;
+
 };

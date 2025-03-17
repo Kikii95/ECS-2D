@@ -1,5 +1,6 @@
 //#include "pch.h"
 #include "EntityManager.h"
+#include "ComponentTag.h"
 
 Entity* EntityManager::CreateEntity() {
     auto entity = std::make_unique<Entity>(nextEntityID);
@@ -22,6 +23,18 @@ std::vector<Entity*> EntityManager::GetAllEntities() {
         entityList.push_back(pair.second.get());
     }
     return entityList;
+}
+
+std::vector<Entity*> EntityManager::GetEntitiesByTag(const std::string& tag) {
+    std::vector<Entity*> result;
+    for (auto& pair : entities) {
+        Entity* entity = pair.second.get(); 
+        ComponentTag* tagComp = entity->GetComponent<ComponentTag>();
+        if (tagComp && tagComp->GetTag() == tag) {
+            result.push_back(entity);
+        }
+    }
+    return result;
 }
 
 void EntityManager::DestroyEntity(int id) {

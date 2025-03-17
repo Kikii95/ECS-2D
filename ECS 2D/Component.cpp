@@ -22,3 +22,7 @@ Entity* Component::GetEntity()
 {
 	return m_pEntity;
 }
+
+std::type_index Component::GetType() const {
+	return typeid(*this);
+}

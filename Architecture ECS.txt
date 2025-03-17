@@ -1,22 +1,22 @@
 Structure ECS :
 
 📂 Composants
-ComponentTransform
-ComponentVelocity
-ComponentRender
+ComponentTransform ✅
+ComponentVelocity 
+ComponentRender ✅
 ComponentAnimation
-ComponentCollider
-ComponentPhysics
-ComponentHealth
-ComponentInput
+ComponentCollider ✅
+ComponentPhysics ✅
+ComponentHealth ✅
+ComponentInput ✅
 ComponentAI
-ComponentScore
+ComponentScore ✅
 ComponentUI
 ComponentParticule
 ComponentWeapon
 ComponentProjectile
 ComponentInteractable
-ComponentFollowCamera
+ComponentCamera ✅
 ComponentState
 ComponentTag
 
