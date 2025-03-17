@@ -8,7 +8,7 @@ void SystemPhysics::Update(float dt, const std::vector<Entity*>& entities) {
         ComponentPhysics* physics = entity->GetComponent<ComponentPhysics>();
         if (!physics) continue;
 
-        physics->UpdatePhysics(dt);
+        physics->UpdatePhysics(dt, gravity);
 
         ComponentTransform* transform = entity->GetComponent<ComponentTransform>();
         if (transform) {

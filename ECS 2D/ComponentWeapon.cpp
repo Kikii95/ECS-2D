@@ -33,7 +33,7 @@ void ComponentWeapon::Fire(const sf::Vector2f& direction) {
 
     projectile->AddComponent<ComponentProjectile>(direction, 800.0f, damage, 3.0f);
 
-    std::cout << "[INFO] Projectile tiré ! Type: " << projectileType << ", Damage: " << damage << std::endl;
+    std::cout << "[INFO] Projectile tire ! Type: " << projectileType << ", Damage: " << damage << std::endl;
 
     fireCooldown = 1.0f / fireRate;
 }

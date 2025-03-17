@@ -13,7 +13,7 @@ ComponentState::ComponentState(Entity* entity, EntityState initialState)
 
 void ComponentState::SetState(EntityState newState) {
     if (currentState != newState) {
-        std::cout << "[INFO] Changement d'état: " << stateNames[currentState] << " -> " << stateNames[newState] << std::endl;
+        std::cout << "[INFO] Changement d'etat: " << stateNames[currentState] << " -> " << stateNames[newState] << std::endl;
         currentState = newState;
     }
 }

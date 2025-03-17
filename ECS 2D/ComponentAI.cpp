@@ -39,7 +39,7 @@ void ComponentAI::Update(float dt) {
 
 void ComponentAI::SetState(AIState newState) {
     if (currentState != newState) {
-        std::cout << "[INFO] IA changée d'état: " << static_cast<int>(currentState) << " -> " << static_cast<int>(newState) << std::endl;
+        std::cout << "[INFO] IA changee d'etat: " << static_cast<int>(currentState) << " -> " << static_cast<int>(newState) << std::endl;
         currentState = newState;
     }
 }

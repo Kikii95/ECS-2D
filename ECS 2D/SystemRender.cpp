@@ -5,21 +5,19 @@
 SystemRender::SystemRender() {}
 
 void SystemRender::Update(float dt, const std::vector<Entity*>& entities) {
-    sf::RenderWindow& window = GameEngine::GetInstance().GetWindow(); 
-
-    window.clear(sf::Color::Black);
+    sf::RenderWindow& window = GameEngine::GetInstance().GetWindow();
 
     for (auto* entity : entities) {
         ComponentRender* render = entity->GetComponent<ComponentRender>();
-        if (!render || !render->GetVisibility()) continue;
+        if (!render) continue;
 
-        ComponentTransform* transform = entity->GetComponent<ComponentTransform>();
-        if (!transform) continue;
+        render->UpdateFromTransform();
 
-        render->UpdateTransform();
-
-        window.draw(render->GetSprite());
+        if (render->HasTexture()) {
+            window.draw(render->GetSprite());
+        }
+        else {
+            window.draw(render->GetShape());
+        }
     }
-
-    window.display();
 }

@@ -17,8 +17,8 @@ void ComponentPhysics::ApplyGravity(float gravity) {
 
 void ComponentPhysics::Jump(float force) {
     if (isOnGround) {
-        velocity.y = -force; 
-        isOnGround = false;
+        velocity.y = -force;
+        isOnGround = false; 
     }
 }
 
@@ -54,23 +54,40 @@ void ComponentPhysics::SetAffectedByGravity(bool state) {
     affectedByGravity = state;
 }
 
-void ComponentPhysics::UpdatePhysics(float dt) {
+void ComponentPhysics::UpdatePhysics(float dt, sf::Vector2f gravity) {
     velocity += acceleration * dt;
+
     acceleration = { 0.0f, 0.0f };
 
     if (affectedByGravity && !isOnGround) {
-        velocity.y += 9.81f * dt; 
+        acceleration.y = gravity.y;
+    }
+    else {
+        acceleration.y = 0.0f;
     }
 
-    velocity.x *= 0.99f;
-    velocity.y *= 0.99f;
+    velocity += acceleration * dt;
 
-    if (velocity.y > 0 && isOnGround) {
-        velocity.y = 0.0f;
+    velocity.x *= 0.98f;
+    velocity.y *= 0.98f;
+
+    float maxFallSpeed = 5000.0f;
+    if (velocity.y > maxFallSpeed) {
+        velocity.y = maxFallSpeed;
     }
 
     ComponentTransform* transform = GetEntity()->GetComponent<ComponentTransform>();
     if (transform) {
         transform->MoveBy(velocity * dt);
+
+        float windowHeight = 720.0f - 50; //TODO :Degager cette offset
+        if (transform->GetPosition().y >= windowHeight) {
+            transform->SetPosition({ transform->GetPosition().x, windowHeight });
+            velocity.y = 0.0f;
+            isOnGround = true;
+        }
+        else {
+            isOnGround = false; 
+        }
     }
 }

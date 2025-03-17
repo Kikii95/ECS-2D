@@ -8,7 +8,7 @@ ComponentScore::ComponentScore(Entity* entity, int initialScore)
 }
 
 void ComponentScore::Logs() {
-    HEAD("sys_SCORE") << "Entité " << GetEntity()->GetID() << " : "
+    HEAD("sys_SCORE") << "Entite " << GetEntity()->GetID() << " : "
         << "Score actuel: " << score << " | Meilleur score: " << highScore << ENDL;
 }
 
@@ -71,6 +71,6 @@ void ComponentScore::SaveHighScore() {
 }
 
 void ComponentScore::OnScoreChange() {
-    std::cout << "[INFO] Score mis à jour : " << score << " | HighScore: " << highScore << std::endl;
+    std::cout << "[INFO] Score mis a jour : " << score << " | HighScore: " << highScore << std::endl;
 	// TODO: Ajouter update UI ou SoundEffect
 }

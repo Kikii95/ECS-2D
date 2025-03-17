@@ -9,7 +9,7 @@ ComponentHealth::ComponentHealth(Entity* entity, int hp, int dmg)
 }
 
 void ComponentHealth::Logs() {
-    HEAD("sys_HEALTH") << "Entité " << GetEntity()->GetID() << " : "
+    HEAD("sys_HEALTH") << "Entite " << GetEntity()->GetID() << " : "
         << health << " / " << maxHealth << " HP" << ENDL;
 }
 
@@ -66,6 +66,6 @@ void ComponentHealth::OnDeath() {
 
     // TODO : Ajouter animation mort, drop, etc.
 
-    std::cout << "[INFO] Entité " << GetEntity()->GetID() << " est morte." << std::endl;
+    std::cout << "[INFO] Entite " << GetEntity()->GetID() << " est morte." << std::endl;
     GameEngine::GetInstance().GetEntityManager().DestroyEntity(GetEntity()->GetID());
 }

@@ -1,26 +1,4 @@
-﻿  ComponentAI.cpp
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,55): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,55): warning C4244:         with
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,55): warning C4244:         [
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,55): warning C4244:             T=float
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,55): warning C4244:         ]
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,39): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,39): warning C4244:         with
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,39): warning C4244:         [
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,39): warning C4244:             T=float
-C:\Users\killi\source\repos\ECS 2D\ECS 2D\ComponentAI.cpp(63,39): warning C4244:         ]
-  ComponentCamera.cpp
-  ComponentCollider.cpp
-  ComponentPhysics.cpp
-  ComponentProjectile.cpp
-  ComponentRender.cpp
-  ComponentTransform.cpp
-  ComponentWeapon.cpp
-  Entity.cpp
-  SystemCollision.cpp
-  SystemPhysics.cpp
-  SystemRender.cpp
-  Génération de code en cours...
+﻿  ComponentPhysics.cpp
   ECS 2D.vcxproj -> C:\Users\killi\source\repos\ECS 2D\x64\Debug\ECS 2D.exe
   'pwsh.exe' n'est pas reconnu en tant que commande interne
   ou externe, un programme exécutable ou un fichier de commandes.

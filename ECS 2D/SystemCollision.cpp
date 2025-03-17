@@ -22,7 +22,7 @@ void SystemCollision::Update(float dt, const std::vector<Entity*>& entities) {
             if (!transformB) continue;
 
             if (colliderA->CheckCollision(colliderB)) {
-                std::cout << "[INFO] Collision détectée entre Entity " << entities[i]->GetID()
+                std::cout << "[INFO] Collision detectee entre Entity " << entities[i]->GetID()
                     << " et Entity " << entities[j]->GetID() << std::endl;
 
                 HandleProjectileCollision(entities[i], entities[j]);

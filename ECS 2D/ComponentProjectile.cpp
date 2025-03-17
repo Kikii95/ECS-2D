@@ -12,7 +12,7 @@ ComponentProjectile::ComponentProjectile(Entity* entity, const sf::Vector2f& dir
 void ComponentProjectile::Update(float dt) {
     lifetime -= dt;
     if (lifetime <= 0) {
-        std::cout << "[INFO] Projectile détruit (temps écoulé)." << std::endl;
+        std::cout << "[INFO] Projectile detruit (temps ecoule)." << std::endl;
         GameEngine::GetInstance().GetEntityManager().DestroyEntity(GetEntity()->GetID());
         return;
     }
@@ -27,7 +27,7 @@ void ComponentProjectile::Update(float dt) {
 //    ComponentHealth* health = other->GetComponent<ComponentHealth>();
 //    if (health) {
 //        health->TakeDamage(damage);
-//        std::cout << "[INFO] Projectile a touché une entité et infligé " << damage << " dégâts." << std::endl;
+//        std::cout << "[INFO] Projectile a touche une entite et inflige " << damage << " degâts." << std::endl;
 //    }
 //
 //    GameEngine::GetInstance().GetEntityManager().DestroyEntity(GetEntity()->GetID());
@@ -69,7 +69,7 @@ void ComponentProjectile::DestroyProjectile(Entity* target) {
     ComponentHealth* health = target->GetComponent<ComponentHealth>();
     if (health) {
         health->TakeDamage(damage);
-        std::cout << "[INFO] Projectile a touché une entité et infligé " << damage << " dégâts." << std::endl;
+        std::cout << "[INFO] Projectile a touche une entite et inflige " << damage << " degâts." << std::endl;
     }
 
     GameEngine::GetInstance().GetEntityManager().DestroyEntity(GetEntity()->GetID());

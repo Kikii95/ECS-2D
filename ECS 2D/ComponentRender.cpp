@@ -1,5 +1,6 @@
 #include "ComponentRender.h"
 #include "ComponentTransform.h"
+#include "ComponentCollider.h"
 
 ComponentRender::ComponentRender(Entity* entity)
     : Component(entity), texture(nullptr), color(sf::Color::White), visible(true) {
@@ -14,6 +15,10 @@ void ComponentRender::SetTexture(sf::Texture* newTexture) {
 
 sf::Texture* ComponentRender::GetTexture() const {
     return texture;
+}
+
+bool ComponentRender::HasTexture() const {
+    return useTexture;
 }
 
 void ComponentRender::SetColor(const sf::Color& newColor) {
@@ -37,11 +42,24 @@ sf::Sprite& ComponentRender::GetSprite() {
     return sprite;
 }
 
-void ComponentRender::UpdateTransform() {
+sf::RectangleShape& ComponentRender::GetShape() {
+    return shape;
+}
+
+void ComponentRender::UpdateFromTransform() {
     ComponentTransform* transform = GetEntity()->GetComponent<ComponentTransform>();
-    if (transform) {
-        sprite.setPosition(transform->GetPosition());
-        sprite.setScale(transform->GetScale());
-        sprite.setRotation(transform->GetRotation());
+    ComponentCollider* collider = GetEntity()->GetComponent<ComponentCollider>();
+
+    if (!transform) return;
+
+    sf::Vector2f position = transform->GetPosition();
+
+    if (useTexture) {
+        sprite.setPosition(position);
+    }
+    else {
+        sf::Vector2f size = collider ? collider->GetColliderSize() : sf::Vector2f(50, 50); // Taille du collider ou valeur par defaut
+        shape.setSize(size);
+        shape.setPosition(position);
     }
 }

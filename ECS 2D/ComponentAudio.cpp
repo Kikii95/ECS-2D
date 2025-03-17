@@ -9,7 +9,7 @@ void ComponentAudio::AddSound(SoundType type, const std::string& file) {
 
 bool ComponentAudio::LoadSound(SoundType type) {
     if (soundFiles.find(type) == soundFiles.end()) {
-        std::cerr << "[ERROR] Aucun fichier audio trouvé pour ce type." << std::endl;
+        std::cerr << "[ERROR] Aucun fichier audio trouve pour ce type." << std::endl;
         return false;
     }
 

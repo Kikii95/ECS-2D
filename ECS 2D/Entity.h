@@ -15,7 +15,7 @@ class Script;
 class Entity {
 private:
     int m_id;
-    std::unordered_map<std::type_index, Component*> m_components; // Accès rapide
+    std::unordered_map<std::type_index, Component*> m_components; // Acces rapide
 	std::list<Script*> m_script;
 
 public:
