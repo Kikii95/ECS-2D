@@ -1,0 +1,42 @@
+Structure ECS :
+
+📂 Composants
+ComponentTransform
+ComponentVelocity
+ComponentRender
+ComponentAnimation
+ComponentCollider
+ComponentPhysics
+ComponentHealth
+ComponentInput
+ComponentAI
+ComponentScore
+ComponentUI
+ComponentParticule
+ComponentWeapon
+ComponentProjectile
+ComponentInteractable
+ComponentFollowCamera
+ComponentState
+ComponentTag
+
+
+📂 Systèmes
+SystemRender
+SystemTransform
+SystemMovement
+SystemPhysics
+SystemCollision
+SystemInput
+SystemAnimation
+SystemAI
+SystemGameplay
+SystemHealth
+SystemWeapon
+SystemProjectile
+SystemParticule
+SystemCamera
+SystemUI
+SystemAudio
+SystemScore
+SystemInteractable
