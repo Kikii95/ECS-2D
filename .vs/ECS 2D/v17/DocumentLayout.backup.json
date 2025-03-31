@@ -1,50 +1,86 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\killi\\source\\repos\\ECS 2D\\",
+  "WorkspaceRootPath": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\SystemRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\SystemRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentDifficulty.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentDifficulty.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCombat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentCombat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentDifficulty.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentDifficulty.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentFogOfWar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentFogOfWar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentFogOfWar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentFogOfWar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentFogOfWar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentQuest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentQuest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentNavire.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentNavire.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentQuest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentWeapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentWeapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTurnOrder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentTurnOrder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTransform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentTransform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTag.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentTag.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentQuest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentQuest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentPhysics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentPhysics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentAction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentAction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentRessource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentRessource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentMerchant.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentMerchant.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentRender.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentRender.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentMerchant.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentProjectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentProjectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentMerchant.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentMerchant.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentHealth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentHealth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCollider.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentCollider.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCrewMember.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentCrewMember.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentAI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9966821-0FEB-4E82-9EC5-32AD6774CCB6}|ECS 2D\\ECS 2D.vcxproj|solutionrelative:ECS 2D\\ComponentAI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,164 +90,267 @@
       "DocumentGroups": [
         {
           "DockedWidth": 365,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SystemRender.cpp",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\SystemRender.cpp",
-              "RelativeDocumentMoniker": "ECS 2D\\SystemRender.cpp",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\SystemRender.cpp",
-              "RelativeToolTip": "ECS 2D\\SystemRender.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-17T11:13:22.204Z",
+              "Title": "ComponentCamera.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCamera.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentCamera.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCamera.h",
+              "RelativeToolTip": "ECS 2D\\ComponentCamera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:45:10.476Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ComponentDifficulty.cpp",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentDifficulty.cpp",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentDifficulty.cpp",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentDifficulty.cpp",
-              "RelativeToolTip": "ECS 2D\\ComponentDifficulty.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-30T19:47:56.595Z",
+              "Title": "ComponentCombat.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCombat.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentCombat.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCombat.h",
+              "RelativeToolTip": "ECS 2D\\ComponentCombat.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:45:09.889Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ComponentDifficulty.h",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentDifficulty.h",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentDifficulty.h",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentDifficulty.h",
-              "RelativeToolTip": "ECS 2D\\ComponentDifficulty.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "ComponentFogOfWar.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentFogOfWar.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentFogOfWar.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentFogOfWar.h",
+              "RelativeToolTip": "ECS 2D\\ComponentFogOfWar.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-30T19:46:23.319Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ComponentFogOfWar.cpp",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentFogOfWar.cpp",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentFogOfWar.cpp",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentFogOfWar.cpp",
-              "RelativeToolTip": "ECS 2D\\ComponentFogOfWar.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-30T19:46:05.605Z",
+              "WhenOpened": "2025-03-31T07:45:09.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ComponentFogOfWar.h",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentFogOfWar.h",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentFogOfWar.h",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentFogOfWar.h",
-              "RelativeToolTip": "ECS 2D\\ComponentFogOfWar.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "Title": "ComponentWeapon.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentWeapon.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentWeapon.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentWeapon.h",
+              "RelativeToolTip": "ECS 2D\\ComponentWeapon.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-30T19:44:48.339Z",
+              "WhenOpened": "2025-03-31T07:45:07.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ComponentQuest.cpp",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentQuest.cpp",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentQuest.cpp",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentQuest.cpp",
-              "RelativeToolTip": "ECS 2D\\ComponentQuest.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-30T19:44:00.42Z",
+              "Title": "ComponentTurnOrder.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTurnOrder.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentTurnOrder.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTurnOrder.h",
+              "RelativeToolTip": "ECS 2D\\ComponentTurnOrder.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:45:06.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ComponentQuest.h",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentQuest.h",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentQuest.h",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentQuest.h",
-              "RelativeToolTip": "ECS 2D\\ComponentQuest.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Title": "ComponentTransform.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTransform.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentTransform.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTransform.h",
+              "RelativeToolTip": "ECS 2D\\ComponentTransform.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-30T19:43:11.248Z",
+              "WhenOpened": "2025-03-31T07:45:05.039Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ComponentAction.cpp",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentAction.cpp",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentAction.cpp",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentAction.cpp",
-              "RelativeToolTip": "ECS 2D\\ComponentAction.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-30T19:40:34.156Z",
+              "Title": "ComponentTag.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTag.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentTag.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentTag.h",
+              "RelativeToolTip": "ECS 2D\\ComponentTag.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:45:04.177Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "ComponentAction.h",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentAction.h",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentAction.h",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentAction.h",
-              "RelativeToolTip": "ECS 2D\\ComponentAction.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "Title": "ComponentState.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentState.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentState.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentState.h",
+              "RelativeToolTip": "ECS 2D\\ComponentState.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-30T19:39:52.868Z",
+              "WhenOpened": "2025-03-30T20:41:53.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ComponentMerchant.cpp",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentMerchant.cpp",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentMerchant.cpp",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentMerchant.cpp",
-              "RelativeToolTip": "ECS 2D\\ComponentMerchant.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-30T19:39:26.106Z",
+              "Title": "ComponentQuest.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentQuest.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentQuest.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentQuest.h",
+              "RelativeToolTip": "ECS 2D\\ComponentQuest.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:45:01.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "ComponentMerchant.h",
-              "DocumentMoniker": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentMerchant.h",
-              "RelativeDocumentMoniker": "ECS 2D\\ComponentMerchant.h",
-              "ToolTip": "C:\\Users\\killi\\source\\repos\\ECS 2D\\ECS 2D\\ComponentMerchant.h",
-              "RelativeToolTip": "ECS 2D\\ComponentMerchant.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "Title": "ComponentPhysics.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentPhysics.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentPhysics.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentPhysics.h",
+              "RelativeToolTip": "ECS 2D\\ComponentPhysics.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-30T19:38:00.215Z",
+              "WhenOpened": "2025-03-31T07:45:01.234Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 365,
-          "SelectedChildIndex": -1,
-          "Children": [
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d3750d8a-574b-4fb3-b7e2-aa8af40e8231}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ComponentNavire.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentNavire.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentNavire.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentNavire.h",
+              "RelativeToolTip": "ECS 2D\\ComponentNavire.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:58.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ComponentRessource.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentRessource.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentRessource.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentRessource.h",
+              "RelativeToolTip": "ECS 2D\\ComponentRessource.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:57.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ComponentRender.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentRender.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentRender.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentRender.h",
+              "RelativeToolTip": "ECS 2D\\ComponentRender.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:56.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ComponentProjectile.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentProjectile.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentProjectile.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentProjectile.h",
+              "RelativeToolTip": "ECS 2D\\ComponentProjectile.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:55.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ComponentMerchant.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentMerchant.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentMerchant.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentMerchant.h",
+              "RelativeToolTip": "ECS 2D\\ComponentMerchant.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:55.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ComponentHealth.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentHealth.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentHealth.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentHealth.h",
+              "RelativeToolTip": "ECS 2D\\ComponentHealth.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:54.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ComponentEvent.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentEvent.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentEvent.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentEvent.h",
+              "RelativeToolTip": "ECS 2D\\ComponentEvent.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:53.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ComponentCollider.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCollider.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentCollider.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCollider.h",
+              "RelativeToolTip": "ECS 2D\\ComponentCollider.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:53.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ComponentCrewMember.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCrewMember.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentCrewMember.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentCrewMember.h",
+              "RelativeToolTip": "ECS 2D\\ComponentCrewMember.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:52.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ComponentAI.h",
+              "DocumentMoniker": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentAI.h",
+              "RelativeDocumentMoniker": "ECS 2D\\ComponentAI.h",
+              "ToolTip": "C:\\Users\\kabboud\\Documents\\GitHub\\ECS-2D\\ECS 2D\\ComponentAI.h",
+              "RelativeToolTip": "ECS 2D\\ComponentAI.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-31T07:44:51.901Z",
+              "EditorCaption": ""
             }
           ]
         }

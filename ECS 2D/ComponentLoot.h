@@ -6,9 +6,10 @@
 struct LootItem {
     std::string itemType;
     int quantity;
+	float lootRate;
 
-    LootItem(const std::string& type, int qty)
-        : itemType(type), quantity(qty) {
+    LootItem(const std::string& type, int qty, float lrate)
+        : itemType(type), quantity(qty), lootRate(lootRate) {
     }
 };
 
@@ -22,6 +23,9 @@ public:
 
     void SetLootable(bool value);
     bool IsLootable() const;
+
+	void SetLootRate(float rate);
+	float GetLootRate() const;
 
 private:
     std::vector<LootItem> lootItems;

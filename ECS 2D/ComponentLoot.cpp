@@ -32,3 +32,11 @@ void ComponentLoot::SetLootable(bool value) {
 bool ComponentLoot::IsLootable() const {
     return isLootable;
 }
+
+void ComponentLoot::SetLootRate(float rate) {
+	lootRate = rate;
+}
+
+float ComponentLoot::GetLootRate() const {
+	return lootRate;
+}

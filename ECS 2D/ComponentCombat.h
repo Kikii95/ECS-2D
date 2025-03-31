@@ -20,6 +20,6 @@ public:
 private:
     bool inCombat = false;
     int initiative = 0;
-    int attackRange = 1; // nombre de cases
+    int attackRange = 1; 
     bool canAct = true;
 };

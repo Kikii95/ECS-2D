@@ -24,7 +24,7 @@ public:
 
     const std::vector<BuffEffect>& GetActiveEffects() const;
 
-    void TickTurn(); // Réduit la durée de tous les effets d’un tour
+    void TickTurn(); 
     void ClearExpired();
 
 private:
