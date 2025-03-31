@@ -18,6 +18,7 @@ struct ActionData {
     ActionType type;
     int cost; 
     int range; 
+	float value;
     std::string description;
 
     ActionData(const std::string& n, ActionType t, int c, int r, const std::string& desc)

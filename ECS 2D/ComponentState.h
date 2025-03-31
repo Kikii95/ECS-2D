@@ -9,7 +9,9 @@ enum class EntityState {
     JUMPING,
     ATTACKING,
     DAMAGED,
-    DEAD
+    DEAD,
+    WAITING,
+	ACTION
 };
 
 class ComponentState : public Component {
@@ -23,4 +25,6 @@ public:
     void SetState(EntityState newState);
     EntityState GetState() const;
     std::string GetStateName() const;
+
+
 };
