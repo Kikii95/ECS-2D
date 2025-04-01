@@ -34,7 +34,6 @@ void SystemCollision::Update(float dt, const std::vector<Entity*>& entities) {
             auto* trB = b->GetComponent<ComponentTransform>();
             if (!colB || !trB) continue;
 
-            // Détection AABB
             sf::FloatRect rectA(trA->GetPosition(), colA->GetColliderSize());
             sf::FloatRect rectB(trB->GetPosition(), colB->GetColliderSize());
 
@@ -68,6 +67,8 @@ void SystemCollision::ResolveCollision(Entity* a, Entity* b) {
     case ColliderType::Solid: {
         std::cout << "[Collision] Obstacle : détection au sol / rollback si besoin.\n";
 
+		if (physics->IsOnGround()) break;
+
         auto* transform = actor->GetComponent<ComponentTransform>();
         auto* physics = actor->GetComponent<ComponentPhysics>();
         if (!transform) break;
@@ -76,23 +77,23 @@ void SystemCollision::ResolveCollision(Entity* a, Entity* b) {
         sf::Vector2f curr = transform->GetPosition();
         sf::Vector2f delta = curr - prev;
 
-        if (delta.y > 0.0f && std::abs(delta.y) > std::abs(delta.x)) {
-            if (physics) {
-                physics->SetIsGrounded(true);
-            }
+        if (curr.y > target->GetComponent<ComponentTransform>()->GetPosition().y + colB->GetColliderSize().y / 2) {
+            physics->SetIsGrounded(true);
+            break;
         }
-        else {
-            sf::Vector2f rollback = curr;
-            if (std::abs(delta.x) > 0.001f) rollback.x = prev.x;
-            if (std::abs(delta.y) > 0.001f) rollback.y = prev.y;
+        
+        sf::Vector2f rollback = curr;
+        if (std::abs(delta.x) > 0.001f) rollback.x = prev.x;
+        if (std::abs(delta.y) > 0.001f) rollback.y = prev.y;
 
-            transform->SetPosition(rollback);
+        transform->SetPosition(prev);
+		physics->SetAcceleration({ 0.f, 0.f });
 
-            if (physics) {
-                if (std::abs(delta.x) > 0.001f) physics->SetVelocityX(0.f);
-                if (delta.y < 0.0f) physics->SetVelocityY(0.f);
-            }
+        if (physics) {
+            if (std::abs(delta.x) > 0.001f) physics->SetVelocityX(0.f);
+            if (delta.y < 0.0f) physics->SetVelocityY(0.f);
         }
+        
         break;
     }
 
