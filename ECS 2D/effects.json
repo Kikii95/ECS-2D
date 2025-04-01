@@ -1,0 +1,37 @@
+{
+  "__meta__": {
+    "legend": {
+      "id": "Identifiant unique de l’effet (utilisé dans les items, compétences, etc.)",
+      "name": "Nom affiché",
+      "description": "Texte descriptif",
+      "duration": "Durée en tours",
+      "type": "buff ou debuff",
+      "statModifiers": "Modifications de stats (attaque, défense...)",
+      "tickDamage": "Dégâts infligés à chaque tour (optionnel)",
+      "icon": "Nom du fichier icône (optionnel)"
+    }
+  },
+
+  "effects": [
+    {
+      "id": "poison_small",
+      "name": "Poison léger",
+      "description": "Inflige de légers dégâts à chaque tour.",
+      "duration": 3,
+      "type": "debuff",
+      "tickDamage": 5,
+      "icon": "poison.png"
+    },
+    {
+      "id": "boost_attack",
+      "name": "Rage de combat",
+      "description": "Augmente l’attaque de l’unité temporairement.",
+      "duration": 2,
+      "type": "buff",
+      "statModifiers": {
+        "attack": 10
+      },
+      "icon": "rage.png"
+    }
+  ]
+}

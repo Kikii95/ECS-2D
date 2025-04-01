@@ -1,15 +1,14 @@
 #pragma once
 #include "System.h"
-#include "ComponentBuffDebuff.h"
-#include "ComponentStats.h"
-#include "ComponentHealth.h"
+#include <string>
 
 class SystemBuffDebuff : public System {
 public:
     SystemBuffDebuff();
 
+    SystemType GetType() const override { return SystemType::TurnBased; }
+
     void Update(float dt, const std::vector<Entity*>& entities) override;
 
-private:
-    void ApplyEffect(Entity* entity, const BuffEffect& effect);
+    void ApplyEffect(Entity* target, const std::string& effectId);
 };

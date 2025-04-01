@@ -15,6 +15,5 @@ public:
     void SetZoom(float factor);
     float GetZoom() const;
 
-    void SyncWithTransform();
     sf::View& GetView();
 };

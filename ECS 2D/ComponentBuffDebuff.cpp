@@ -4,39 +4,30 @@ ComponentBuffDebuff::ComponentBuffDebuff(Entity* entity)
     : Component(entity) {
 }
 
-void ComponentBuffDebuff::AddEffect(const BuffEffect& effect) {
-    if (!effect.isStackable) {
-        for (auto& existing : activeEffects) {
-            if (existing.statAffected == effect.statAffected) {
-                existing = effect;
-                return;
-            }
-        }
-    }
-    activeEffects.push_back(effect);
-}
-
-void ComponentBuffDebuff::RemoveEffect(const std::string& stat) {
-    activeEffects.erase(std::remove_if(activeEffects.begin(), activeEffects.end(),
-        [&stat](const BuffEffect& eff) {
-            return eff.statAffected == stat;
-        }), activeEffects.end());
-}
-
-const std::vector<BuffEffect>& ComponentBuffDebuff::GetActiveEffects() const {
+const std::vector<AppliedEffect>& ComponentBuffDebuff::GetActiveEffects() const {
     return activeEffects;
 }
 
-void ComponentBuffDebuff::TickTurn() {
-    for (auto& eff : activeEffects) {
-        eff.remainingTurns--;
+void ComponentBuffDebuff::AddEffect(const EffectDefinition* def) {
+    if (!def) return;
+
+    for (auto& effect : activeEffects) {
+        if (effect.definition && effect.definition->id == def->id) {
+            effect.remainingTurns = def->duration;
+            return;
+        }
     }
-    ClearExpired();
+
+    activeEffects.emplace_back(def);
 }
 
-void ComponentBuffDebuff::ClearExpired() {
-    activeEffects.erase(std::remove_if(activeEffects.begin(), activeEffects.end(),
-        [](const BuffEffect& eff) {
-            return eff.remainingTurns <= 0;
-        }), activeEffects.end());
+void ComponentBuffDebuff::Tick() {
+    for (auto it = activeEffects.begin(); it != activeEffects.end(); ) {
+        if (--it->remainingTurns <= 0) {
+            it = activeEffects.erase(it);
+        }
+        else {
+            ++it;
+        }
+    }
 }

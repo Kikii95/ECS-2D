@@ -8,11 +8,17 @@ private:
     sf::Vector2f scale;
     float rotation; 
 
+    sf::Vector2f previousPosition;
+
+
 public:
     ComponentTransform(Entity* entity, sf::Vector2f startPos);
 
     void SetPosition(const sf::Vector2f& pos);
     sf::Vector2f GetPosition() const;
+
+    void SavePreviousPosition();
+    sf::Vector2f GetPreviousPosition() const;
 
     void SetScale(const sf::Vector2f& sca);
     sf::Vector2f GetScale() const;

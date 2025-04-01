@@ -1,15 +1,14 @@
 #pragma once
 #include "Component.h"
-#include <string>
+#include "ItemInstance.h"
 #include <vector>
 
-struct LootItem {
-    std::string itemType;
-    int quantity;
-	float lootRate;
+struct LootSlot {
+    ItemInstance item;
+	float dropChance = 1.0f; // = 100% 
 
-    LootItem(const std::string& type, int qty, float lrate)
-        : itemType(type), quantity(qty), lootRate(lootRate) {
+    LootSlot(const ItemInstance& instance, float chance = 1.0f)
+        : item(instance), dropChance(chance) {
     }
 };
 
@@ -17,17 +16,9 @@ class ComponentLoot : public Component {
 public:
     ComponentLoot(Entity* entity);
 
-    void AddItem(const LootItem& item);
-    void RemoveItem(const std::string& type);
-    const std::vector<LootItem>& GetLootItems() const;
-
-    void SetLootable(bool value);
-    bool IsLootable() const;
-
-	void SetLootRate(float rate);
-	float GetLootRate() const;
+    void AddLoot(const LootSlot& loot);
+    const std::vector<LootSlot>& GetLootTable() const;
 
 private:
-    std::vector<LootItem> lootItems;
-    bool isLootable = true;
+    std::vector<LootSlot> lootTable;
 };

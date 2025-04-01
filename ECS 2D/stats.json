@@ -1,0 +1,77 @@
+{
+  "__meta__": {
+    "legend": {
+      "id": "Identifiant unique du profil",
+      "attack": "Puissance d’attaque",
+      "defense": "Réduction des dégâts",
+      "speed": "Initiative / déplacement",
+      "crit": "Taux de critique (%)",
+      "range": "Portée d’attaque (en cases, min 1)",
+      "accuracy": "Chance de toucher (%) (min recommandé : 70)",
+      "luck": "Influence sur événements / loot (%)"
+    }
+  },
+
+  "stats": [
+    {
+      "id": "thief",
+      "attack": 8,
+      "defense": 4,
+      "speed": 6,
+      "crit": 15,
+      "range": 1,
+      "accuracy": 90,
+      "luck": 10
+    },
+    {
+      "id": "merchant",
+      "attack": 2,
+      "defense": 3,
+      "speed": 5,
+      "crit": 0,
+      "range": 1,
+      "accuracy": 75,
+      "luck": 20
+    },
+    {
+      "id": "soldier",
+      "attack": 10,
+      "defense": 8,
+      "speed": 4,
+      "crit": 10,
+      "range": 1,
+      "accuracy": 85,
+      "luck": 5
+    },
+    {
+      "id": "captain",
+      "attack": 15,
+      "defense": 10,
+      "speed": 5,
+      "crit": 12,
+      "range": 1,
+      "accuracy": 90,
+      "luck": 12
+    },
+    {
+      "id": "hunter",
+      "attack": 9,
+      "defense": 5,
+      "speed": 6,
+      "crit": 18,
+      "range": 3,
+      "accuracy": 95,
+      "luck": 8
+    },
+    {
+      "id": "healer",
+      "attack": 3,
+      "defense": 4,
+      "speed": 5,
+      "crit": 0,
+      "range": 2,
+      "accuracy": 80,
+      "luck": 15
+    }
+  ]
+}

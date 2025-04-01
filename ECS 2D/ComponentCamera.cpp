@@ -23,13 +23,6 @@ float ComponentCamera::GetZoom() const {
     return view.getSize().x / 1280.0f;
 }
 
-void ComponentCamera::SyncWithTransform() {
-    ComponentTransform* transform = GetEntity()->GetComponent<ComponentTransform>();
-    if (transform) {
-        SetPosition(transform->GetPosition());
-    }
-}
-
 sf::View& ComponentCamera::GetView() {
     return view;
 }

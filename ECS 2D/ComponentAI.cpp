@@ -81,14 +81,16 @@ void ComponentAI::Chase(float dt) {
 }
 
 void ComponentAI::Attack() {
-    ComponentWeapon* weapon = GetEntity()->GetComponent<ComponentWeapon>();
-    if (!weapon || !weapon->CanFire() || !target) return;
+    //ComponentWeapon* weapon = GetEntity()->GetComponent<ComponentWeapon>();
+    //if (!weapon || !weapon->CanFire() || !target) return;
 
-    sf::Vector2f direction = target->GetComponent<ComponentTransform>()->GetPosition() - GetEntity()->GetComponent<ComponentTransform>()->GetPosition();
-    float length = std::hypot(direction.x, direction.y);
-    if (length > 0) {
-        direction /= length;
-    }
+    //sf::Vector2f direction = target->GetComponent<ComponentTransform>()->GetPosition() - GetEntity()->GetComponent<ComponentTransform>()->GetPosition();
+    //float length = std::hypot(direction.x, direction.y);
+    //if (length > 0) {
+    //    direction /= length;
+    //}
 
-    weapon->Fire(direction);
+    //weapon->Fire(direction);
 }
+
+//TO DO: Implement the SetState, GetState, SetTarget, GetTarget, Patrol, Chase, and Attack methods

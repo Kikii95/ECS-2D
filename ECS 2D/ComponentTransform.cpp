@@ -5,11 +5,20 @@ ComponentTransform::ComponentTransform(Entity* entity, sf::Vector2f startPos)
 }
 
 void ComponentTransform::SetPosition(const sf::Vector2f& pos) {
+    SavePreviousPosition();
     position = pos;
 }
 
 sf::Vector2f ComponentTransform::GetPosition() const {
     return position;
+}
+
+void ComponentTransform::SavePreviousPosition() {
+    previousPosition = position;
+}
+
+sf::Vector2f ComponentTransform::GetPreviousPosition() const {
+    return previousPosition;
 }
 
 void ComponentTransform::SetScale(const sf::Vector2f& sca) {
@@ -29,6 +38,7 @@ float ComponentTransform::GetRotation() const {
 }
 
 void ComponentTransform::MoveBy(const sf::Vector2f& delta) {
+    SavePreviousPosition();
     position += delta;
 }
 

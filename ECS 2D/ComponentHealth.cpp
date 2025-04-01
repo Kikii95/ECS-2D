@@ -61,10 +61,7 @@ void ComponentHealth::OnDeath() {
     ComponentRender* render = GetEntity()->GetComponent<ComponentRender>();
     if (render) render->SetVisibility(false);
 
-    ComponentCollider* collider = GetEntity()->GetComponent<ComponentCollider>();
-    if (collider) collider->SetActive(false);
-
-    // TODO : Ajouter animation mort, drop, etc.
+    // TO DO : Ajouter animation mort, drop, etc.
 
     std::cout << "[INFO] Entite " << GetEntity()->GetID() << " est morte." << std::endl;
     GameEngine::GetInstance().GetEntityManager().DestroyEntity(GetEntity()->GetID());

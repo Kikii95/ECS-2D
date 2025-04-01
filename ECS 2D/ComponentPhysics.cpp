@@ -1,5 +1,4 @@
 #include "ComponentPhysics.h"
-#include "ComponentTransform.h"
 
 ComponentPhysics::ComponentPhysics(Entity* entity)
     : Component(entity), velocity(0.0f, 0.0f), acceleration(0.0f, 0.0f) {
@@ -30,12 +29,28 @@ void ComponentPhysics::SetVelocity(const sf::Vector2f& v) {
     velocity = v;
 }
 
+void ComponentPhysics::AddVelocity(const sf::Vector2f& v) {
+	velocity += v;
+}
+
+void ComponentPhysics::SetVelocityX(float x) {
+    velocity.x = x;
+}
+
+void ComponentPhysics::SetVelocityY(float y) {
+    velocity.y = y;
+}
+
 sf::Vector2f ComponentPhysics::GetAcceleration() const {
     return acceleration;
 }
 
 void ComponentPhysics::SetAcceleration(const sf::Vector2f& a) {
     acceleration = a;
+}
+
+void ComponentPhysics::AddAcceleration(const sf::Vector2f& a) {
+	acceleration += a;
 }
 
 bool ComponentPhysics::IsOnGround() const {
@@ -52,42 +67,4 @@ bool ComponentPhysics::IsAffectedByGravity() const {
 
 void ComponentPhysics::SetAffectedByGravity(bool state) {
     affectedByGravity = state;
-}
-
-void ComponentPhysics::UpdatePhysics(float dt, sf::Vector2f gravity) {
-    velocity += acceleration * dt;
-
-    acceleration = { 0.0f, 0.0f };
-
-    if (affectedByGravity && !isOnGround) {
-        acceleration.y = gravity.y;
-    }
-    else {
-        acceleration.y = 0.0f;
-    }
-
-    velocity += acceleration * dt;
-
-    velocity.x *= 0.98f;
-    velocity.y *= 0.98f;
-
-    float maxFallSpeed = 5000.0f;
-    if (velocity.y > maxFallSpeed) {
-        velocity.y = maxFallSpeed;
-    }
-
-    ComponentTransform* transform = GetEntity()->GetComponent<ComponentTransform>();
-    if (transform) {
-        transform->MoveBy(velocity * dt);
-
-        float windowHeight = 720.0f - 50; //TODO :Degager cette offset
-        if (transform->GetPosition().y >= windowHeight) {
-            transform->SetPosition({ transform->GetPosition().x, windowHeight });
-            velocity.y = 0.0f;
-            isOnGround = true;
-        }
-        else {
-            isOnGround = false; 
-        }
-    }
 }

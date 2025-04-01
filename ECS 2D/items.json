@@ -1,0 +1,61 @@
+{
+  "__meta__": {
+    "legend": {
+      "id": "Identifiant unique de l’objet (utilisé comme référence)",
+      "name": "Nom affiché de l’objet",
+      "description": "Texte descriptif, affiché à l'inspection",
+      "type": "Type d’objet : Generic, Weapon, Consumable, Resource, Trophy, QuestItem",
+      "weight": "Poids unitaire (en kg)",
+      "basePrice": "Prix de base en or",
+      "stackable": "true/false — si l’objet peut être empilé",
+      "damage": "Dégâts (si Weapon)",
+      "range": "Portée (si Weapon)",
+      "healAmount": "PV restaurés (si Consumable)",
+      "effectId": "Effet spécial appliqué (si Consumable ou Trophy)"
+    }
+  },
+
+  "items": [
+    {
+      "id": "wood",
+      "name": "Bois",
+      "description": "Du bois brut, utile pour les réparations.",
+      "type": "Resource",
+      "weight": 1.0,
+      "basePrice": 3,
+      "stackable": true
+    },
+    {
+      "id": "iron_sword",
+      "name": "Épée en fer",
+      "description": "Une lame solide, efficace en combat rapproché.",
+      "type": "Weapon",
+      "weight": 3.5,
+      "basePrice": 50,
+      "stackable": false,
+      "damage": 15,
+      "range": 1
+    },
+    {
+      "id": "rum",
+      "name": "Rhum",
+      "description": "Remonte le moral de l’équipage et soigne légèrement.",
+      "type": "Consumable",
+      "weight": 1.0,
+      "basePrice": 10,
+      "stackable": true,
+      "healAmount": 20,
+      "effectId": "heal_small"
+    },
+    {
+      "id": "golden_skull",
+      "name": "Crâne doré",
+      "description": "Un trophée précieux récupéré après un combat épique.",
+      "type": "Trophy",
+      "weight": 2.0,
+      "basePrice": 100,
+      "stackable": false,
+      "effectId": "boost_reputation"
+    }
+  ]
+}

@@ -1,32 +1,22 @@
 #pragma once
 #include "Component.h"
-#include <SFML/System.hpp>
+#include "HexDirection.h"
+#include <string>
+#include <SFML/System/Vector2.hpp>
 
 class ComponentProjectile : public Component {
-private:
-    sf::Vector2f direction;
-    float speed;
-    float lifetime;
-    int damage;
-
 public:
-    ComponentProjectile(Entity* entity, const sf::Vector2f& dir, float spd, int dmg, float life = 5.0f);
+    std::string itemId;
+    Entity* owner = nullptr;
 
-    void Update(float dt);
-    //void OnCollision(Entity* other);
+    sf::Vector2i gridPos;         
+    HexDirection direction;      
+    int rangeLeft = 0;            
+    int hitsRemaining = 1;        
 
-    void SetDirection(const sf::Vector2f& dir);
-    sf::Vector2f GetDirection() const;
-
-    void SetSpeed(float spd);
-    float GetSpeed() const;
-
-    void SetLifetime(float time);
-    float GetLifetime() const;
-
-    void SetDamage(int dmg);
-    int GetDamage() const;
-
-
-    void DestroyProjectile(Entity* target);
+    ComponentProjectile(Entity* entity);
 };
+
+
+
+//TO DO : ajouter dice effect (dégâts aléatoires) 

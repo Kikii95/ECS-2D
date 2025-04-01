@@ -14,17 +14,19 @@ public:
 
     sf::Vector2f GetVelocity() const;
     void SetVelocity(const sf::Vector2f& velocity);
+	void AddVelocity(const sf::Vector2f& velocity);
+    void SetVelocityX(float x);
+    void SetVelocityY(float y);
 
     sf::Vector2f GetAcceleration() const;
     void SetAcceleration(const sf::Vector2f& acceleration);
+	void AddAcceleration(const sf::Vector2f& acceleration);
 
     bool IsOnGround() const;
     void SetIsGrounded(bool state);
 
     bool IsAffectedByGravity() const;
     void SetAffectedByGravity(bool state);
-
-    void UpdatePhysics(float dt, sf::Vector2f gravity);
 
 private:
     sf::Vector2f velocity;

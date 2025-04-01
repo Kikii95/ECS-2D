@@ -1,16 +1,17 @@
 #pragma once
 #include "System.h"
-#include "ComponentCollider.h"
-#include "ComponentTransform.h"
-#include <vector>
 
 class SystemCollision : public System {
 public:
+    SystemCollision();
+
+    SystemType GetType() const override { return SystemType::Active; }
     void Update(float dt, const std::vector<Entity*>& entities) override;
 
+    // Temporaire : bascule manuelle entre exploration et combat
+    void SetExplorationMode(bool active);
+
 private:
-    void HandleProjectileCollision(Entity* projectile, Entity* target);
-    void HandleWallCollision(Entity* entityA, Entity* entityB);
-    void HandleEntityCollision(Entity* entityA, Entity* entityB);
-    void ResolveCollision(Entity* entityA, Entity* entityB, const sf::Vector2f& overlap);
+    bool explorationMode = true;
+    void ResolveCollision(Entity* a, Entity* b);
 };

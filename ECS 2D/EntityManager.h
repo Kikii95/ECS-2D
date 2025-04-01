@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Entity.h"
+#include <functional>
+#include "ItemDefinition.h"
+#include "HexDirection.h"
 
 
 class EntityManager {
@@ -17,6 +20,7 @@ public:
 
     std::vector<Entity*> GetAllEntities();
     std::vector<Entity*> GetEntitiesByTag(const std::string& tag);
+    std::vector<Entity*> GetEntitiesInArea(const sf::Vector2i& center, AreaType type, int size, HexDirection direction, std::function<bool(Entity*)> filter);
     
     void DestroyEntity(int id);
 

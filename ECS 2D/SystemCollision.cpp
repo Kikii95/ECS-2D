@@ -1,86 +1,125 @@
 #include "SystemCollision.h"
-#include "ComponentPhysics.h"
 #include "ComponentTransform.h"
-#include "ComponentHealth.h"
+#include "ComponentCollider.h"
 #include "ComponentProjectile.h"
-#include "ComponentTag.h"
+#include "ComponentPhysics.h"
+#include "ActionDatabase.h"
 #include <iostream>
+#include "SystemAction.h"
+// #include "GameModeManager.h" 
+
+SystemCollision::SystemCollision() {}
+
+void SystemCollision::SetExplorationMode(bool active) {
+    explorationMode = active;
+}
 
 void SystemCollision::Update(float dt, const std::vector<Entity*>& entities) {
+    if (!explorationMode) return; 
+
     for (size_t i = 0; i < entities.size(); ++i) {
-        ComponentCollider* colliderA = entities[i]->GetComponent<ComponentCollider>();
-        if (!colliderA || !colliderA->IsActive()) continue;
+        Entity* a = entities[i];
 
-        ComponentTransform* transformA = entities[i]->GetComponent<ComponentTransform>();
-        if (!transformA) continue;
+        if (a->GetComponent<ComponentProjectile>()) continue; //TO DO : suppr car pas de component collider sur les projectil a verifier
 
-        for (size_t j = i + 1; j < entities.size(); ++j) { 
-            ComponentCollider* colliderB = entities[j]->GetComponent<ComponentCollider>();
-            if (!colliderB || !colliderB->IsActive()) continue;
+        auto* colA = a->GetComponent<ComponentCollider>();
+        auto* trA = a->GetComponent<ComponentTransform>();
+        if (!colA || !trA) continue;
 
-            ComponentTransform* transformB = entities[j]->GetComponent<ComponentTransform>();
-            if (!transformB) continue;
+        for (size_t j = i + 1; j < entities.size(); ++j) {
+            Entity* b = entities[j];
+            if (b->GetComponent<ComponentProjectile>()) continue;
 
-            if (colliderA->CheckCollision(colliderB)) {
-                std::cout << "[INFO] Collision detectee entre Entity " << entities[i]->GetID()
-                    << " et Entity " << entities[j]->GetID() << std::endl;
+            auto* colB = b->GetComponent<ComponentCollider>();
+            auto* trB = b->GetComponent<ComponentTransform>();
+            if (!colB || !trB) continue;
 
-                HandleProjectileCollision(entities[i], entities[j]);
-                HandleProjectileCollision(entities[j], entities[i]);
+            // Détection AABB
+            sf::FloatRect rectA(trA->GetPosition(), colA->GetColliderSize());
+            sf::FloatRect rectB(trB->GetPosition(), colB->GetColliderSize());
 
-                HandleWallCollision(entities[i], entities[j]);
-                HandleWallCollision(entities[j], entities[i]);
-
-                HandleEntityCollision(entities[i], entities[j]);
+            if (rectA.intersects(rectB)) {
+				std::cout << "[Collision] Collision détectée entre " << a->GetID() << " et " << b->GetID() << "\n";
+                ResolveCollision(a, b);
             }
         }
     }
 }
 
-void SystemCollision::HandleProjectileCollision(Entity* projectile, Entity* target) {
-    ComponentProjectile* proj = projectile->GetComponent<ComponentProjectile>();
-    if (!proj) return;
+void SystemCollision::ResolveCollision(Entity* a, Entity* b) {
+    auto* colA = a->GetComponent<ComponentCollider>();
+    auto* colB = b->GetComponent<ComponentCollider>();
+    if (!colA || !colB) return;
 
-    proj->DestroyProjectile(target);
-}
+    Entity* actor = a;
+    Entity* target = b;
+    ColliderType type = colB->GetColliderType();
 
-void SystemCollision::HandleWallCollision(Entity* entityA, Entity* entityB) {
-    ComponentTag* tagA = entityA->GetComponent<ComponentTag>();
-    ComponentTag* tagB = entityB->GetComponent<ComponentTag>();
-
-    bool isWallA = tagA && tagA->GetTag() == "WALL";
-    bool isWallB = tagB && tagB->GetTag() == "WALL";
-
-    if (isWallA && !isWallB) {
-        entityB->GetComponent<ComponentTransform>()->MoveBy(-entityB->GetComponent<ComponentCollider>()->GetOverlap(entityA->GetComponent<ComponentCollider>()));
+    if (colA->GetColliderType() != ColliderType::Solid) {
+        actor = b;
+        target = a;
+        type = colA->GetColliderType();
     }
-    else if (isWallB && !isWallA) {
-        entityA->GetComponent<ComponentTransform>()->MoveBy(-entityA->GetComponent<ComponentCollider>()->GetOverlap(entityB->GetComponent<ComponentCollider>()));
+
+    auto* physics = actor->GetComponent<ComponentPhysics>();
+    if (!physics) return;
+
+    switch (type) {
+    case ColliderType::Solid: {
+        std::cout << "[Collision] Obstacle : détection au sol / rollback si besoin.\n";
+
+        auto* transform = actor->GetComponent<ComponentTransform>();
+        auto* physics = actor->GetComponent<ComponentPhysics>();
+        if (!transform) break;
+
+        sf::Vector2f prev = transform->GetPreviousPosition();
+        sf::Vector2f curr = transform->GetPosition();
+        sf::Vector2f delta = curr - prev;
+
+        if (delta.y > 0.0f && std::abs(delta.y) > std::abs(delta.x)) {
+            if (physics) {
+                physics->SetIsGrounded(true);
+            }
+        }
+        else {
+            sf::Vector2f rollback = curr;
+            if (std::abs(delta.x) > 0.001f) rollback.x = prev.x;
+            if (std::abs(delta.y) > 0.001f) rollback.y = prev.y;
+
+            transform->SetPosition(rollback);
+
+            if (physics) {
+                if (std::abs(delta.x) > 0.001f) physics->SetVelocityX(0.f);
+                if (delta.y < 0.0f) physics->SetVelocityY(0.f);
+            }
+        }
+        break;
     }
-}
 
-void SystemCollision::HandleEntityCollision(Entity* entityA, Entity* entityB) {
-    ComponentCollider* colliderA = entityA->GetComponent<ComponentCollider>();
-    ComponentCollider* colliderB = entityB->GetComponent<ComponentCollider>();
 
-    if (colliderA->IsTrigger() || colliderB->IsTrigger()) return; 
+    case ColliderType::Mob: {
+        std::cout << "[Collision] Mob : lancement d’un combat.\n";
+        // À faire : GameModeManager::EnterCombat(actor, target);
+        std::cout << " Simulation du combat entre " << actor->GetID() << " et " << target->GetID() << "\n";
+        break;
+    }
 
-    sf::Vector2f overlap = colliderA->GetOverlap(colliderB);
-    ResolveCollision(entityA, entityB, overlap);
-}
+    //case ColliderType::Object: {
+    //    std::cout << "[Collision] Objet : action 'interact'.\n";
+    //    const ActionData* action = ActionDatabase::Get().GetAction("interact_lever"); // exemple générique
+    //    if (action) {
+    //        GameEngine::GetInstance().GetSystemManager().GetSystem<SystemAction>()->ExecuteAction(actor, action);
+    //    }
+    //    break;
+    //}
 
-void SystemCollision::ResolveCollision(Entity* entityA, Entity* entityB, const sf::Vector2f& overlap) {
-    ComponentTransform* transformA = entityA->GetComponent<ComponentTransform>();
-    ComponentTransform* transformB = entityB->GetComponent<ComponentTransform>();
-
-    if (!transformA || !transformB) return;
-
-    transformA->MoveBy(-0.5f * overlap);
-    transformB->MoveBy(0.5f * overlap);
-
-    ComponentPhysics* physicsA = entityA->GetComponent<ComponentPhysics>();
-    ComponentPhysics* physicsB = entityB->GetComponent<ComponentPhysics>();
-
-    if (physicsA) physicsA->SetVelocity({ 0, 0 });
-    if (physicsB) physicsB->SetVelocity({ 0, 0 });
+    //case ColliderType::Gatherable: {
+    //    std::cout << "[Collision] Ressource : action 'gather'.\n";
+    //    const ActionData* action = ActionDatabase::Get().GetAction("gather_wood"); // exemple générique
+    //    if (action) {
+    //        GameEngine::GetInstance().GetSystemManager().GetSystem<SystemAction>()->ExecuteAction(actor, action);
+    //    }
+    //    break;
+    //}
+    }
 }

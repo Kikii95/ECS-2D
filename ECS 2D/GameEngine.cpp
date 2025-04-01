@@ -41,33 +41,32 @@ void GameEngine::Init() {
     // Systems
     systemManager.AddSystem<SystemRender>();
     systemManager.AddSystem<SystemPhysics>();
-    systemManager.AddSystem<SystemCollision>();
+	systemManager.AddSystem<SystemCollision>();
 
     // Player
     Entity* player = entityManager.CreateEntity();
     player->AddComponent<ComponentTransform>(sf::Vector2f(100, 500));
     player->AddComponent<ComponentRender>();
     player->AddComponent<ComponentPhysics>();
-    player->AddComponent<ComponentCollider>(sf::Vector2f(50, 50), false);
     player->AddComponent<ComponentInput>();
-    player->AddComponent<ComponentWeapon>(10, 1.5f, "bullet");
     player->AddComponent<ComponentTag>("PLAYER");
+	player->AddComponent<ComponentCollider>();
+
+    player->GetComponent<ComponentCollider>()->SetColliderSize(sf::Vector2f(100, 100));
+	player->GetComponent<ComponentCollider>()->SetType(ColliderType::Solid);
+
 
     // Wall
     Entity* wall = entityManager.CreateEntity();
     wall->AddComponent<ComponentTransform>(sf::Vector2f(400, 500));
     wall->AddComponent<ComponentRender>();
-    wall->AddComponent<ComponentCollider>(sf::Vector2f(100, 100), false);
     wall->AddComponent<ComponentTag>("WALL");
+	wall->AddComponent<ComponentCollider>();
 
-    // Projectile
-    Entity* projectile = entityManager.CreateEntity();
-    projectile->AddComponent<ComponentTransform>(sf::Vector2f(200, 500));
-    projectile->AddComponent<ComponentRender>();
-    projectile->AddComponent<ComponentPhysics>();
-    projectile->AddComponent<ComponentProjectile>(sf::Vector2f(1, 0), 800.0f, 10, 3.0f);
-    projectile->AddComponent<ComponentCollider>(sf::Vector2f(10, 10), true);
-    projectile->AddComponent<ComponentTag>("PROJECTILE");
+	wall->GetComponent<ComponentCollider>()->SetColliderSize(sf::Vector2f(100, 100));
+    wall->GetComponent<ComponentCollider>()->SetType(ColliderType::Solid);
+
+
 }
 
 
@@ -129,10 +128,6 @@ void GameEngine::ProcessEvents() {
 
     physics->SetVelocity(velocity);
 
-    // Shoot
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && weapon->CanFire()) {
-        weapon->Fire(sf::Vector2f(1, 0));
-    }
 }
 
 

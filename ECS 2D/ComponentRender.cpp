@@ -1,6 +1,4 @@
 #include "ComponentRender.h"
-#include "ComponentTransform.h"
-#include "ComponentCollider.h"
 
 ComponentRender::ComponentRender(Entity* entity)
     : Component(entity), texture(nullptr), color(sf::Color::White), visible(true) {
@@ -46,20 +44,3 @@ sf::RectangleShape& ComponentRender::GetShape() {
     return shape;
 }
 
-void ComponentRender::UpdateFromTransform() {
-    ComponentTransform* transform = GetEntity()->GetComponent<ComponentTransform>();
-    ComponentCollider* collider = GetEntity()->GetComponent<ComponentCollider>();
-
-    if (!transform) return;
-
-    sf::Vector2f position = transform->GetPosition();
-
-    if (useTexture) {
-        sprite.setPosition(position);
-    }
-    else {
-        sf::Vector2f size = collider ? collider->GetColliderSize() : sf::Vector2f(50, 50); // Taille du collider ou valeur par defaut
-        shape.setSize(size);
-        shape.setPosition(position);
-    }
-}

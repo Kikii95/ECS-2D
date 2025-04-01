@@ -1,32 +1,26 @@
 #pragma once
 #include "Component.h"
-#include <string>
 #include <vector>
+#include "EffectDefinition.h"
 
-struct BuffEffect {
-    std::string statAffected;
-    int value;
-    int remainingTurns;
-    bool isBuff; // true = buff, false = debuff
-    bool isStackable;
+struct AppliedEffect {
+    const EffectDefinition* definition = nullptr;
+    int remainingTurns = 0;
 
-    BuffEffect(const std::string& stat, int val, int turns, bool buff, bool stackable)
-        : statAffected(stat), value(val), remainingTurns(turns), isBuff(buff), isStackable(stackable) {
+    AppliedEffect(const EffectDefinition* def)
+        : definition(def), remainingTurns(def ? def->duration : 0) {
     }
 };
+
 
 class ComponentBuffDebuff : public Component {
 public:
     ComponentBuffDebuff(Entity* entity);
 
-    void AddEffect(const BuffEffect& effect);
-    void RemoveEffect(const std::string& stat);
-
-    const std::vector<BuffEffect>& GetActiveEffects() const;
-
-    void TickTurn(); 
-    void ClearExpired();
+    const std::vector<AppliedEffect>& GetActiveEffects() const;
+    void AddEffect(const EffectDefinition* def);
+    void Tick();
 
 private:
-    std::vector<BuffEffect> activeEffects;
+    std::vector<AppliedEffect> activeEffects;
 };

@@ -8,6 +8,7 @@ class SystemNavire : public System {
 public:
     SystemNavire();
 
+	SystemType GetType() const override { return SystemType::Active; }
     void Update(float dt, const std::vector<Entity*>& entities) override;
 
 private:

@@ -1,8 +1,7 @@
 #include "ComponentFaction.h"
-#include "ToolBox.h"
 
-ComponentFaction::ComponentFaction(Entity* entity, const std::string& id)
-    : Component(entity), factionId(id), factionName("Unknown"), relationValue(0) {
+ComponentFaction::ComponentFaction(Entity* entity)
+    : Component(entity) {
 }
 
 void ComponentFaction::SetFactionId(const std::string& id) {
@@ -21,16 +20,10 @@ std::string ComponentFaction::GetFactionName() const {
     return factionName;
 }
 
-void ComponentFaction::SetRelationValue(int value) {
-    relationValue = clamp(value, -100, 100);
+void ComponentFaction::SetZone(const std::string& z) {
+    zone = z;
 }
 
-int ComponentFaction::GetRelationValue() const {
-    return relationValue;
-}
-
-FactionRelation ComponentFaction::GetRelationType() const {
-    if (relationValue <= -30) return FactionRelation::Hostile;
-    if (relationValue >= 30) return FactionRelation::Friendly;
-    return FactionRelation::Neutral;
+std::string ComponentFaction::GetZone() const {
+    return zone;
 }

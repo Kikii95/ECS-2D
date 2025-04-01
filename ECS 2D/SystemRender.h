@@ -8,5 +8,7 @@
 class SystemRender : public System {
 public:
     SystemRender();
+
+	SystemType GetType() const override { return SystemType::UI; }
     void Update(float dt, const std::vector<Entity*>& entities) override;
 };

@@ -1,42 +1,57 @@
 #include "SystemAction.h"
+#include "ComponentInventory.h"
+#include "ComponentHealth.h"
+#include "SystemBuffDebuff.h"
+#include "EffectDatabase.h"
 #include <iostream>
 
 SystemAction::SystemAction() {}
 
-void SystemAction::Update(float dt, const std::vector<Entity*>& entities) {
-    for (auto* entity : entities) {
-        auto* state = entity->GetComponent<ComponentState>();
-        auto* actionComp = entity->GetComponent<ComponentAction>();
-        if (!state || !actionComp) continue;
-
-        if (state->GetState() != EntityState::ACTION) continue;
-
-        const ActionData* action = actionComp->GetActionByName(state->GetStateName());
-        if (!action) continue;
-
-        ExecuteAction(entity, *action);
-
-        state->SetState(EntityState::WAITING); 
-    }
-}
-
 void SystemAction::ExecuteAction(Entity* entity, const ActionData& action) {
     std::cout << "[SystemAction] Action déclenchée : " << action.name << std::endl;
 
-    if (action.type == ActionType::Heal) {
-        auto* health = entity->GetComponent<ComponentHealth>();
-        if (health) {
-            health->Heal(action.value); 
+    switch (action.type) {
+    case ActionType::Use: {
+        std::cout << " Utilisation d’un objet : " << action.itemId << std::endl;
+
+        if (!action.effectId.empty()) {
+            GameEngine::GetInstance().GetSystemManager().GetSystem<SystemBuffDebuff>()->ApplyEffect(entity, action.effectId);
+            std::cout << " Effet appliqué : " << action.effectId << std::endl;
         }
-    }
-    else if (action.type == ActionType::Buff) {
-        auto* buff = entity->GetComponent<ComponentBuffDebuff>();
-        if (buff) {
-            BuffEffect effect(action.name, action.value, 3, true, false);
-            buff->AddEffect(effect);
+
+        auto* inv = entity->GetComponent<ComponentInventory>();
+        if (inv) {
+            inv->RemoveItem(action.itemId, 1);
         }
+        break;
     }
-    else if (action.type == ActionType::Attack) {
-        std::cout << "[SystemAction] Attaque déclenchée (redirect to Combat)." << std::endl;
+
+    case ActionType::Gather: {
+        std::cout << " Récolte ciblée : " << action.targetType << std::endl;
+
+        auto* inv = entity->GetComponent<ComponentInventory>();
+        if (inv) {
+            std::string resourceId = action.targetType; 
+            inv->AddItem(ItemInstance(resourceId, action.value));
+            std::cout << " Ajout de " << action.value << " x " << resourceId << std::endl;
+        }
+        break;
+    }
+
+    case ActionType::Inspect: {
+        std::cout << " Inspection de la zone (" << action.targetType << ")" << std::endl;
+		// TO DO : add logic for inspection
+        break;
+    }
+
+    case ActionType::Interact: {
+        std::cout << " Interaction avec : " << action.targetType << std::endl;
+		// TO DO : add logic for interaction
+        break;
+    }
+
+    default:
+        std::cout << " Type d’action inconnu ou non géré." << std::endl;
+        break;
     }
 }

@@ -7,6 +7,7 @@ class SystemTurnOrder : public System {
 public:
     SystemTurnOrder();
 
+	SystemType GetType() const override { return SystemType::TurnBased; }
     void Update(float dt, const std::vector<Entity*>& entities) override;
 
     void StartNewRound(const std::vector<Entity*>& entities);

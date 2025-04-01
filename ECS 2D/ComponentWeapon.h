@@ -1,25 +1,18 @@
 #pragma once
 #include "Component.h"
-#include <SFML/System.hpp>
 #include <string>
 
 class ComponentWeapon : public Component {
-private:
-    int damage;
-    float fireRate;     
-    float fireCooldown;  
-    std::string projectileType;
-
 public:
-    ComponentWeapon(Entity* entity, int dmg, float rate, std::string projType = "bullet");
+    ComponentWeapon(Entity* entity, const std::string& weaponId);
 
-    void Update(float dt); 
-    bool CanFire() const;  
-    void Fire(const sf::Vector2f& direction); 
+    const std::string& GetWeaponId() const;
+    void SetWeaponId(const std::string& id);
 
-    void SetDamage(int dmg);
     int GetDamage() const;
+    int GetRange() const;
+    bool IsValid() const;
 
-    void SetFireRate(float rate);
-    float GetFireRate() const;
+private:
+    std::string weaponId;
 };

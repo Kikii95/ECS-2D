@@ -1,16 +1,20 @@
 #include "ComponentInventory.h"
+#include "ItemDatabase.h"
 #include "ToolBox.h"
 
 ComponentInventory::ComponentInventory(Entity* entity, float capacity)
     : Component(entity), capacity(capacity) {
 }
 
-bool ComponentInventory::AddItem(const InventoryItem& item) {
-    float projectedWeight = GetTotalWeight() + item.GetTotalWeight();
+bool ComponentInventory::AddItem(const ItemInstance& item) {
+    const ItemDefinition* def = ItemDatabase::Get().GetItem(item.itemId);
+    if (!def) return false;
+
+    float projectedWeight = GetTotalWeight() + def->weight * item.quantity;
     if (projectedWeight > capacity) return false;
 
     for (auto& i : items) {
-        if (i.itemType == item.itemType && i.unitWeight == item.unitWeight) {
+        if (i.itemId == item.itemId && def->stackable) {
             i.quantity += item.quantity;
             return true;
         }
@@ -20,9 +24,9 @@ bool ComponentInventory::AddItem(const InventoryItem& item) {
     return true;
 }
 
-bool ComponentInventory::RemoveItem(const std::string& type, int quantity) {
+bool ComponentInventory::RemoveItem(const std::string& itemId, int quantity) {
     for (auto it = items.begin(); it != items.end(); ++it) {
-        if (it->itemType == type) {
+        if (it->itemId == itemId) {
             if (it->quantity <= quantity) {
                 items.erase(it);
             }
@@ -38,7 +42,10 @@ bool ComponentInventory::RemoveItem(const std::string& type, int quantity) {
 float ComponentInventory::GetTotalWeight() const {
     float total = 0.0f;
     for (const auto& item : items) {
-        total += item.GetTotalWeight();
+        const ItemDefinition* def = ItemDatabase::Get().GetItem(item.itemId);
+        if (def) {
+            total += def->weight * item.quantity;
+        }
     }
     return total;
 }
@@ -51,6 +58,6 @@ void ComponentInventory::SetCapacity(float newCapacity) {
     capacity = maximum(0.0f, newCapacity);
 }
 
-const std::vector<InventoryItem>& ComponentInventory::GetItems() const {
+const std::vector<ItemInstance>& ComponentInventory::GetItems() const {
     return items;
 }

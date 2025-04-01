@@ -1,38 +1,48 @@
 #include "SystemBuffDebuff.h"
+#include "ComponentBuffDebuff.h"
+#include "ComponentHealth.h"
+#include "ComponentStats.h"
+#include "EffectDatabase.h"
 #include <iostream>
 
 SystemBuffDebuff::SystemBuffDebuff() {}
 
-void SystemBuffDebuff::Update(float dt, const std::vector<Entity*>& entities) {
-    for (auto* entity : entities) {
-        auto* buffComp = entity->GetComponent<ComponentBuffDebuff>();
-        if (!buffComp) continue;
+void SystemBuffDebuff::ApplyEffect(Entity* target, const std::string& effectId) {
+    const EffectDefinition* def = EffectDatabase::Get().GetEffect(effectId);
+    if (!def) return;
 
-        for (const auto& effect : buffComp->GetActiveEffects()) {
-            ApplyEffect(entity, effect);
-        }
+    auto* buff = target->GetComponent<ComponentBuffDebuff>();
+    if (!buff) return;
 
-        buffComp->TickTurn();
-    }
+    buff->AddEffect(def);
+
+	std::cout << "[BuffDebuff] Effet appliqué : " << def->id << " à entity ID " << target->GetID() << std::endl;
 }
 
-void SystemBuffDebuff::ApplyEffect(Entity* entity, const BuffEffect& effect) {
-    if (effect.statAffected == "health") {
+void SystemBuffDebuff::Update(float dt, const std::vector<Entity*>& entities) {
+    for (Entity* entity : entities) {
+        auto* buff = entity->GetComponent<ComponentBuffDebuff>();
+        if (!buff) continue;
+
         auto* health = entity->GetComponent<ComponentHealth>();
-        if (!health) return;
-
-        if (effect.isBuff)
-            health->Heal(effect.value);
-        else
-            health->TakeDamage(effect.value);
-    }
-    else {
         auto* stats = entity->GetComponent<ComponentStats>();
-        if (!stats) return;
 
-        if (!stats->HasStat(effect.statAffected))
-            stats->SetStat(effect.statAffected, 0); 
+        for (const AppliedEffect& effect : buff->GetActiveEffects()) {
+            if (!effect.definition) continue;
 
-        stats->ModifyStat(effect.statAffected, effect.isBuff ? effect.value : -effect.value);
+            if (effect.definition->tickDamage > 0 && health) {
+                health->TakeDamage(effect.definition->tickDamage);
+                std::cout << "[BuffDebuff] " << effect.definition->id << " inflige "
+                    << effect.definition->tickDamage << " dégâts à entity ID " << entity->GetID() << std::endl;
+            }
+
+            if (stats && !effect.definition->statModifiers.empty()) {
+                for (const auto& it : effect.definition->statModifiers) {
+                    stats->AddModifier(it.first, it.second);
+                }
+            }
+        }
+
+        buff->Tick();
     }
 }

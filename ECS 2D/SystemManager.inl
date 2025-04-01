@@ -10,9 +10,22 @@ T* SystemManager::AddSystem(Args&&... args) {
 
     auto system = std::make_unique<T>(std::forward<Args>(args)...);
     T* systemPtr = system.get();
+
+    switch (systemPtr->GetType()) {
+    case SystemType::Active:
+        activeSystems.push_back(systemPtr);
+        break;
+    case SystemType::UI:
+        renderSystems.push_back(systemPtr);
+        break;
+    default:
+        break;
+    }
+
     systems[typeIdx] = std::move(system);
     return systemPtr;
 }
+
 
 
 template <typename T>

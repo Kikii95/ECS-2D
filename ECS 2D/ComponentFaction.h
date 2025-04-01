@@ -2,15 +2,9 @@
 #include "Component.h"
 #include <string>
 
-enum class FactionRelation {
-    Hostile,
-    Neutral,
-    Friendly
-};
-
 class ComponentFaction : public Component {
 public:
-    ComponentFaction(Entity* entity, const std::string& id = "neutral");
+    ComponentFaction(Entity* entity);
 
     void SetFactionId(const std::string& id);
     std::string GetFactionId() const;
@@ -18,13 +12,11 @@ public:
     void SetFactionName(const std::string& name);
     std::string GetFactionName() const;
 
-    void SetRelationValue(int value);
-    int GetRelationValue() const;
-
-    FactionRelation GetRelationType() const;
+    void SetZone(const std::string& z);
+    std::string GetZone() const;
 
 private:
     std::string factionId;
     std::string factionName;
-    int relationValue = 0;
+    std::string zone;
 };

@@ -34,9 +34,6 @@
     <Filter Include="Fichiers sources\ECS">
       <UniqueIdentifier>{9d58c8e1-3729-4ce9-b1df-7edb97d1760f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\SYSTEMS">
-      <UniqueIdentifier>{64cd3851-0505-4f41-8153-b09359767e49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\TOOLS">
       <UniqueIdentifier>{45f52da2-c6ac-4cfc-81d0-7c76b5738b87}</UniqueIdentifier>
     </Filter>
@@ -48,6 +45,9 @@
     </Filter>
     <Filter Include="Fichiers d%27en-tête\GAME">
       <UniqueIdentifier>{ca5a4b80-352b-45b2-b95c-9dca86d1af15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\SYSTEMS">
+      <UniqueIdentifier>{64cd3851-0505-4f41-8153-b09359767e49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -129,9 +129,6 @@
     <ClCompile Include="ComponentReputation.cpp">
       <Filter>Fichiers sources\COMPONENTS</Filter>
     </ClCompile>
-    <ClCompile Include="ComponentRessource.cpp">
-      <Filter>Fichiers sources\COMPONENTS</Filter>
-    </ClCompile>
     <ClCompile Include="ComponentState.cpp">
       <Filter>Fichiers sources\COMPONENTS</Filter>
     </ClCompile>
@@ -207,6 +204,84 @@
     <ClCompile Include="SystemNavire.cpp">
       <Filter>Fichiers sources\SYSTEMS</Filter>
     </ClCompile>
+    <ClCompile Include="SystemDialogue.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemEvent.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemFogOfWar.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemQuest.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemReputation.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemDatabase.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemDefinition.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemInstance.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentMoney.cpp">
+      <Filter>Fichiers sources\COMPONENTS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemMoney.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemMerchant.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemInventory.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemFaction.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLogicManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemCamera.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemLoot.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemWeapon.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemProjectile.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
+    <ClCompile Include="HexDirection.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectDefinition.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectDatabase.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsDefinition.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsDatabase.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionDatabase.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionDefinition.cpp">
+      <Filter>Fichiers sources\OTHERS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemDifficulty.cpp">
+      <Filter>Fichiers sources\SYSTEMS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComponentAction.h">
@@ -279,9 +354,6 @@
       <Filter>Fichiers d%27en-tête\COMPONENTS</Filter>
     </ClInclude>
     <ClInclude Include="ComponentReputation.h">
-      <Filter>Fichiers d%27en-tête\COMPONENTS</Filter>
-    </ClInclude>
-    <ClInclude Include="ComponentRessource.h">
       <Filter>Fichiers d%27en-tête\COMPONENTS</Filter>
     </ClInclude>
     <ClInclude Include="ComponentState.h">
@@ -360,6 +432,84 @@
       <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
     </ClInclude>
     <ClInclude Include="SystemNavire.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemReputation.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemQuest.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemFogOfWar.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemEvent.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemDialogue.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemMoney.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemMerchant.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemInventory.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemFaction.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentMoney.h">
+      <Filter>Fichiers d%27en-tête\COMPONENTS</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemDatabase.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemDefinition.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemInstance.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLogicManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemWeapon.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemProjectile.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemLoot.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemCamera.h">
+      <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
+    </ClInclude>
+    <ClInclude Include="HexDirection.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectDefinition.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectDatabase.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsDatabase.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsDefinition.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionDatabase.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionDefinition.h">
+      <Filter>Fichiers d%27en-tête\OTHERS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemDifficulty.h">
       <Filter>Fichiers d%27en-tête\SYSTEMS</Filter>
     </ClInclude>
   </ItemGroup>

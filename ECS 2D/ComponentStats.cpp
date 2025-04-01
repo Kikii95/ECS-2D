@@ -1,29 +1,44 @@
 #include "ComponentStats.h"
+#include "StatsDatabase.h"
 
 ComponentStats::ComponentStats(Entity* entity)
     : Component(entity) {
 }
 
-void ComponentStats::SetStat(const std::string& name, int value) {
-    stats[name] = value;
+void ComponentStats::LoadFromDefinition(const std::string& id) {
+    const auto* def = StatsDatabase::Get().GetStats(id);
+    if (!def) return;
+
+    for (auto it = def->values.begin(); it != def->values.end(); ++it) {
+        SetBaseStat(it->first, it->second);
+    }
+}
+
+void ComponentStats::SetBaseStat(const std::string& name, int value) {
+    baseStats[name] = value;
+}
+
+int ComponentStats::GetBaseStat(const std::string& name) const {
+    auto it = baseStats.find(name);
+    return (it != baseStats.end()) ? it->second : 0;
+}
+
+void ComponentStats::AddModifier(const std::string& name, int bonus) {
+    modifiers[name] += bonus;
+}
+
+void ComponentStats::ClearModifiers() {
+    modifiers.clear();
 }
 
 int ComponentStats::GetStat(const std::string& name) const {
-    auto it = stats.find(name);
-    if (it != stats.end()) {
-        return it->second;
-    }
-    return 0;
+    return GetBaseStat(name) + (modifiers.count(name) ? modifiers.at(name) : 0);
 }
 
-void ComponentStats::ModifyStat(const std::string& name, int delta) {
-    stats[name] = GetStat(name) + delta;
+const std::unordered_map<std::string, int>& ComponentStats::GetAllBaseStats() const {
+    return baseStats;
 }
 
-bool ComponentStats::HasStat(const std::string& name) const {
-    return stats.find(name) != stats.end();
-}
-
-const std::unordered_map<std::string, int>& ComponentStats::GetAllStats() const {
-    return stats;
+const std::unordered_map<std::string, int>& ComponentStats::GetAllModifiers() const {
+    return modifiers;
 }

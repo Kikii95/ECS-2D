@@ -5,24 +5,28 @@ ComponentMerchant::ComponentMerchant(Entity* entity, float buyRate, float sellRa
     : Component(entity), buyRate(buyRate), sellRate(sellRate) {
 }
 
-void ComponentMerchant::AddItem(const MerchantItem& item) {
+void ComponentMerchant::AddItem(const MerchantSlot& slot) {
     for (auto& existing : stock) {
-        if (existing.itemType == item.itemType) {
-            existing.quantity += item.quantity;
+        if (existing.item.itemId == slot.item.itemId && slot.item.quantity > 0) {
+            existing.item.quantity += slot.item.quantity;
             return;
         }
     }
-    stock.push_back(item);
+    stock.push_back(slot);
 }
 
-void ComponentMerchant::RemoveItem(const std::string& itemType) {
+void ComponentMerchant::RemoveItem(const std::string& itemId) {
     stock.erase(std::remove_if(stock.begin(), stock.end(),
-        [&itemType](const MerchantItem& item) {
-            return item.itemType == itemType;
+        [&itemId](const MerchantSlot& slot) {
+            return slot.item.itemId == itemId;
         }), stock.end());
 }
 
-const std::vector<MerchantItem>& ComponentMerchant::GetStock() const {
+std::vector<MerchantSlot>& ComponentMerchant::GetStock() {
+    return stock;
+}
+
+const std::vector<MerchantSlot>& ComponentMerchant::GetStock() const {
     return stock;
 }
 

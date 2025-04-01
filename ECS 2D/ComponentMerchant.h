@@ -1,15 +1,14 @@
 #pragma once
 #include "Component.h"
-#include <string>
+#include "ItemInstance.h"
 #include <vector>
 
-struct MerchantItem {
-    std::string itemType;
-    int price; 
-    int quantity;
+struct MerchantSlot {
+    ItemInstance item;
+    int overridePrice = -1; 
 
-    MerchantItem(const std::string& type, int price, int qty)
-        : itemType(type), price(price), quantity(qty) {
+    MerchantSlot(const ItemInstance& item, int price = -1)
+        : item(item), overridePrice(price) {
     }
 };
 
@@ -17,10 +16,12 @@ class ComponentMerchant : public Component {
 public:
     ComponentMerchant(Entity* entity, float buyRate = 1.0f, float sellRate = 1.0f);
 
-    void AddItem(const MerchantItem& item);
-    void RemoveItem(const std::string& itemType);
+    void AddItem(const MerchantSlot& slot);
+    void RemoveItem(const std::string& itemId);
 
-    const std::vector<MerchantItem>& GetStock() const;
+    std::vector<MerchantSlot>& GetStock(); 
+    const std::vector<MerchantSlot>& GetStock() const; 
+
 
     float GetBuyRate() const;
     float GetSellRate() const;
@@ -29,7 +30,7 @@ public:
     void SetSellRate(float rate);
 
 private:
-    std::vector<MerchantItem> stock;
-    float buyRate; 
-    float sellRate; 
+    std::vector<MerchantSlot> stock;
+    float buyRate;
+    float sellRate;
 };
